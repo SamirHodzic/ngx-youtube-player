@@ -52,7 +52,7 @@ Visit http://localhost:4200 and enjoy!
 - Create local playlist without authorization
 - Simple Import/Export playlists as JSON
 
-## TODO (Feel free to make pul request for any additional feature)
+## TODO (Feel free to make pull request for any additional feature)
 - Save multiple playlists and switch between them
 - Update UI to be fully responsive for mobile/tablet
 - Write tests
