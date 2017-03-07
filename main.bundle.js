@@ -1358,7 +1358,7 @@ module.exports = module.exports.toString();
 /***/ 634:
 /***/ (function(module, exports) {
 
-module.exports = "<main-list></main-list>\n\n<a href=\"https://github.com/SamirHodzic/ngx-youtube-player\">\n  <img src=\"assets/github-logo.png\" style=\"position: absolute; z-index: 9999; top: 12px; right: 6%; width: 40px;\">\n</a>"
+module.exports = "<main-list></main-list>"
 
 /***/ }),
 
