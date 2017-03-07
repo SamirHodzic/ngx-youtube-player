@@ -15,7 +15,7 @@ export class PlaylistStoreService {
 
 	public retrieveStorage() {
 		let storedPlaylist = this.parse();
-		if (!storedPlaylist.playlists) {
+		if (!storedPlaylist) {
 			this.init();
 			storedPlaylist = this.parse();
 		}
