@@ -1,0 +1,19 @@
+.mdl-textfield--floating-label.is-focused>.mdl-textfield__label {
+  color: #fff;
+}
+
+.mdl-textfield__input {
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.mdl-textfield__label {
+  color: rgba(255, 255, 255, .26);
+}
+
+.mdl-textfield__label:after {
+  background-color: #fff;
+}
+
+.mdl-textfield {
+  width: 45%;
+}

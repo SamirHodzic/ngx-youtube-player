@@ -1,0 +1,125 @@
+.loader-progress {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+  top: 0;
+  left: 0;
+}
+
+.loader-progress>.loading {
+  margin: 0 auto;
+}
+
+.demo-card-square.mdl-card {
+  height: 210px;
+  width: 100%;
+}
+
+.custom-cell.mdl-cell--2-col {
+  width: calc(20% - 16px);
+}
+
+.custom-cell {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.demo-card-square>.mdl-card__title {
+  color: #fff;
+}
+
+.mdl-card__title {
+  position: relative;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.mdl-card--expand:hover {
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.3);
+  background-size: 130% !important;
+  cursor: pointer;
+}
+
+.mdl-card__supporting-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 6px 2px 2px 2px;
+  color: rgb(196, 48, 43);
+  text-align: right;
+  width: 97%;
+}
+
+.mdl-card__supporting-text .material-icons {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.video-name-block {
+  font-size: 11px;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 40px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.video-info-block {
+  font-size: 11px;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.video-informations {
+  padding: 8px;
+  text-align: center;
+}
+
+.video-informations i {
+  font-size: 11px;
+}
+
+.video-play-button {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.video-play-button i {
+  font-size: 50px;
+  visibility: hidden;
+}
+
+.mdl-card--expand:hover .video-play-button i {
+  visibility: visible;
+}
+
+.last-item {
+  margin-bottom: 45px;
+}
+
+@media (max-width: 479px) {
+  .custom-cell.mdl-cell--2-col {
+    width: calc(100% - 16px);
+  }
+}
+
+@media (max-width: 839px) and (min-width: 480px) {
+  .custom-cell.mdl-cell--2-col {
+    width: calc(50% - 16px);
+  }
+}

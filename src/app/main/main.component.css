@@ -1,0 +1,38 @@
+.loader-video {
+  top: calc(50% - 35px);
+  left: calc(50% - 16px);
+}
+
+.mdl-layout__header {
+  height: 64px;
+}
+
+.mdl-layout__content {
+  width: 95%;
+}
+
+.mdl-layout__header-row {
+  padding: 0 40px 0 16px;
+}
+
+.mdl-layout__drawer-button {
+  right: 0;
+  left: inherit;
+}
+
+.blur-main-playlist-opened {
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.mdl-js-snackbar {
+  bottom: 0;
+  z-index: 999;
+  right: 0;
+  left: 78%;
+  background-color: rgba(196, 48, 43, 0.85);
+}
