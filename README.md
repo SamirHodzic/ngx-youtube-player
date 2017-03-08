@@ -22,7 +22,7 @@ $ npm install -g @angular/cli@latest
 
 ```bash
 $	git clone https://github.com/SamirHodzic/ngx-youtube-player
-$	cd angular2-youtube
+$	cd ngx-youtube-player
 ```
 
 **3- Install the npm packages described in the package.json :**
