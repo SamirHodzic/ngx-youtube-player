@@ -100,6 +100,8 @@ export class MainComponent {
 		this.videoPlaylist.forEach((video, index) => {
 			if (video.id === current) {
 				inPlaylist = index;
+			}else{
+				this.playFirstInPlaylist();
 			}
 		});
 
@@ -128,6 +130,8 @@ export class MainComponent {
 		this.videoPlaylist.forEach((video, index) => {
 			if (video.id === current) {
 				inPlaylist = index;
+			}else{
+				this.playFirstInPlaylist();
 			}
 		});
 
