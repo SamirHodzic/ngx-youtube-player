@@ -32,7 +32,11 @@ export class MainComponent {
 	}
 
 	playFirstInPlaylist(): void {
-		if (this.videoPlaylist[0]) this.youtubePlayer.playVideo(this.videoPlaylist[0].id);
+		if (this.videoPlaylist[0]) {
+			let playlistEl = document.getElementById('playlist');
+			playlistEl.scrollTop = 0;
+			this.youtubePlayer.playVideo(this.videoPlaylist[0].id);
+		}
 	}
 
 	handleSearchVideo(videos: Array<any>): void {
@@ -100,7 +104,7 @@ export class MainComponent {
 		this.videoPlaylist.forEach((video, index) => {
 			if (video.id === current) {
 				inPlaylist = index;
-			}else{
+			} else {
 				this.playFirstInPlaylist();
 			}
 		});
@@ -130,7 +134,7 @@ export class MainComponent {
 		this.videoPlaylist.forEach((video, index) => {
 			if (video.id === current) {
 				inPlaylist = index;
-			}else{
+			} else {
 				this.playFirstInPlaylist();
 			}
 		});
@@ -156,7 +160,7 @@ export class MainComponent {
 
 	getShuffled(index: number): number {
 		let i = Math.floor(Math.random() * this.videoPlaylist.length);
-		return i !== index ? i: this.getShuffled(index);
+		return i !== index ? i : this.getShuffled(index);
 	}
 
 	closePlaylist(): void {
@@ -171,16 +175,16 @@ export class MainComponent {
 	}
 
 	exportPlaylist(): void {
-		if(this.videoPlaylist.length < 1) { 
+		if (this.videoPlaylist.length < 1) {
 			this.notificationService.showNotification("Nothing to export.");
 			return;
 		}
 		let data = JSON.stringify(this.videoPlaylist);
 		let a = document.createElement("a");
-    let file = new Blob([data], {type: "text/json"});
-    a.href = URL.createObjectURL(file);
-    a.download = "playlist.json";
-    a.click();
+		let file = new Blob([data], { type: "text/json" });
+		a.href = URL.createObjectURL(file);
+		a.download = "playlist.json";
+		a.click();
 		this.notificationService.showNotification("Playlist exported.");
 	}
 
