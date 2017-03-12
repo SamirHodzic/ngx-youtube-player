@@ -437,11 +437,15 @@ var MainComponent = (function () {
         });
     };
     MainComponent.prototype.nextVideo = function () {
+        var _this = this;
         var current = this.youtubePlayer.getCurrentVideo();
         var inPlaylist = undefined;
         this.videoPlaylist.forEach(function (video, index) {
             if (video.id === current) {
                 inPlaylist = index;
+            }
+            else {
+                _this.playFirstInPlaylist();
             }
         });
         if (inPlaylist !== undefined) {
@@ -465,11 +469,15 @@ var MainComponent = (function () {
         }
     };
     MainComponent.prototype.prevVideo = function () {
+        var _this = this;
         var current = this.youtubePlayer.getCurrentVideo();
         var inPlaylist = undefined;
         this.videoPlaylist.forEach(function (video, index) {
             if (video.id === current) {
                 inPlaylist = index;
+            }
+            else {
+                _this.playFirstInPlaylist();
             }
         });
         if (inPlaylist !== undefined) {
