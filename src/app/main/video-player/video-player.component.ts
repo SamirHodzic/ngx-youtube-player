@@ -108,7 +108,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 
 	handleInputChange(e: any): void {
 		let file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-		if(file.type !== 'application/json') {
+		if(file.name.split('.').pop() !== 'json') {
 			this.notificationService.showNotification("File not supported.");
 			return;
 		}
