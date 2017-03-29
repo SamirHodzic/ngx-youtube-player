@@ -1,7 +1,8 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { window } from '@angular/platform-browser/src/facade/browser';
 import { NotificationService } from './notification.service';
+
+let _window: any = window;
 
 @Injectable()
 export class YoutubePlayerService {
@@ -16,8 +17,8 @@ export class YoutubePlayerService {
 
 	createPlayer(): void {
 		let interval = setInterval(() => {
-			if ((typeof window.YT !== "undefined") && window.YT && window.YT.Player) {
-				this.yt_player = new window.YT.Player('yt-player', {
+			if ((typeof _window.YT !== "undefined") && _window.YT && _window.YT.Player) {
+				this.yt_player = new _window.YT.Player('yt-player', {
 					width: '440',
 					height: '250',
 					playerVars: {

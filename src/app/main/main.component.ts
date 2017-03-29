@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 import { YoutubeApiService } from "../shared/services/youtube-api.service";
 import { YoutubePlayerService } from "../shared/services/youtube-player.service";
 import { PlaylistStoreService } from "../shared/services/playlist-store.service";
-import { window } from '@angular/platform-browser/src/facade/browser';
 import { NotificationService } from '../shared/services/notification.service';
 
 @Component({

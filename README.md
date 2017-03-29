@@ -4,15 +4,15 @@
 [![Dependencies][dependencies]][dependencies-url]
 [![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 
-> YouTube player app built with Angular 2 (latest 2.4.10).
+> YouTube player app built with Angular 4 (latest 4.0.0).
 
-[Demo](https://samirhodzic.github.io/ngx-youtube-player)
+[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 29/03/2017)
 
 ## Quickstart
 
 **Note**: Require Node 4+ together with Npm 3+, also be sure to install 
 
-**1- Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.0.0-rc.2) :**
+**1- Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.0.0) :**
 
 ```bash
 $ npm install -g @angular/cli@latest
@@ -40,7 +40,7 @@ $ ng serve
 Visit http://localhost:4200 and enjoy!
 
 ## Dependencies
-- [Angular 2](https://angular.io/) with [Typescript](https://www.typescriptlang.org/)
+- [Angular 4](https://angular.io/) with [Typescript](https://www.typescriptlang.org/)
 - [Angular CLI](https://cli.angular.io/)
 - [Material Design Lite](https://github.com/google/material-design-lite/)
 

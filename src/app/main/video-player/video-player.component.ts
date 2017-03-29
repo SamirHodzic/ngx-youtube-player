@@ -12,9 +12,9 @@ export class VideoPlayerComponent implements AfterContentInit {
 	public minPlayer: boolean = true;
 	public superMinPlayer: boolean = false;
 	public playingEvent: string = 'pause';
-	private shuffle: boolean = false;
-	private repeat: boolean = false;
-	private fullscreenActive: boolean = false;
+	public shuffle: boolean = false;
+	public repeat: boolean = false;
+	public fullscreenActive: boolean = false;
 
 	@Output() repeatActive = new EventEmitter();
 	@Output() shuffleActive = new EventEmitter();
