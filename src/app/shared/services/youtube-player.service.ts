@@ -11,13 +11,14 @@ export class YoutubePlayerService {
 
 	@Output() videoChangeEvent: EventEmitter<any> = new EventEmitter(true);
 	@Output() playPauseEvent: EventEmitter<any> = new EventEmitter(true);
+	@Output() currentVideoText: EventEmitter<any> = new EventEmitter(true);
 
 	constructor(public notificationService: NotificationService) {
 	}
 
 	createPlayer(): void {
 		let interval = setInterval(() => {
-			if ((typeof _window.YT !== "undefined") && _window.YT && _window.YT.Player) {
+			if ((typeof _window.YT !== 'undefined') && _window.YT && _window.YT.Player) {
 				this.yt_player = new _window.YT.Player('yt-player', {
 					width: '440',
 					height: '250',
@@ -52,13 +53,14 @@ export class YoutubePlayerService {
 		}
 	}
 
-	playVideo(videoId: string): void {		
+	playVideo(videoId: string, videoText?: string): void {
 		if(!this.yt_player) {
-			this.notificationService.showNotification("Player not ready.");
+			this.notificationService.showNotification('Player not ready.');
 			return;
 		}
 		this.yt_player.loadVideoById(videoId);
 		this.currentVideoId = videoId;
+		this.currentVideoText.emit(videoText);
 	}
 
 	pausePlayingVideo(): void {

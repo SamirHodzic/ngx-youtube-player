@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
-import { YoutubeApiService } from "../shared/services/youtube-api.service";
-import { YoutubePlayerService } from "../shared/services/youtube-player.service";
-import { PlaylistStoreService } from "../shared/services/playlist-store.service";
+import { Component } from '@angular/core';
+import { YoutubeApiService } from '../shared/services/youtube-api.service';
+import { YoutubePlayerService } from '../shared/services/youtube-player.service';
+import { PlaylistStoreService } from '../shared/services/playlist-store.service';
 import { NotificationService } from '../shared/services/notification.service';
 
 @Component({
@@ -34,7 +34,7 @@ export class MainComponent {
 		if (this.videoPlaylist[0]) {
 			let playlistEl = document.getElementById('playlist');
 			playlistEl.scrollTop = 0;
-			this.youtubePlayer.playVideo(this.videoPlaylist[0].id);
+			this.youtubePlayer.playVideo(this.videoPlaylist[0].id, this.videoPlaylist[0].snippet.title);
 		}
 	}
 
@@ -75,7 +75,9 @@ export class MainComponent {
 	}
 
 	searchMore(): void {
-		if (this.loadingInProgress || this.pageLoadingFinished || this.videoList.length < 1) return;
+		if (this.loadingInProgress || this.pageLoadingFinished || this.videoList.length < 1) {
+			return;
+		}
 		this.loadingInProgress = true;
 		this.youtubeService.searchNext()
 			.then(data => {
@@ -112,15 +114,15 @@ export class MainComponent {
 			let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
 			let playlistEl = document.getElementById('playlist');
 			if (this.shuffle) {
-				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
-				this.youtubePlayer.playVideo(shuffled);
+				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)];
+				this.youtubePlayer.playVideo(shuffled.id, shuffled.snippet.title);
 				playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
 			} else {
 				if (this.videoPlaylist.length - 1 === inPlaylist) {
-					this.youtubePlayer.playVideo(this.videoPlaylist[0].id);
+					this.youtubePlayer.playVideo(this.videoPlaylist[0].id, this.videoPlaylist[0].snippet.title);
 					playlistEl.scrollTop = 0;
 				} else {
-					this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id)
+					this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id, this.videoPlaylist[inPlaylist + 1].snippet.title)
 					playlistEl.scrollTop = topPos - 100;
 				}
 			}
@@ -142,15 +144,15 @@ export class MainComponent {
 			let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
 			let playlistEl = document.getElementById('playlist');
 			if (this.shuffle) {
-				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
-				this.youtubePlayer.playVideo(shuffled);
+				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)];
+				this.youtubePlayer.playVideo(shuffled.id, shuffled.snippet.title);
 				playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
 			} else {
 				if (inPlaylist === 0) {
-					this.youtubePlayer.playVideo(this.videoPlaylist[this.videoPlaylist.length - 1].id);
+					this.youtubePlayer.playVideo(this.videoPlaylist[this.videoPlaylist.length - 1].id, this.videoPlaylist[this.videoPlaylist.length - 1].snippet.title);
 					playlistEl.scrollTop = playlistEl.offsetHeight;
 				} else {
-					this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist - 1].id)
+					this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist - 1].id, this.videoPlaylist[inPlaylist - 1].snippet.title)
 					playlistEl.scrollTop = topPos - 230;
 				}
 			}
@@ -170,21 +172,21 @@ export class MainComponent {
 	clearPlaylist(): void {
 		this.videoPlaylist = [];
 		this.playlistService.clearPlaylist();
-		this.notificationService.showNotification("Playlist cleared.");
+		this.notificationService.showNotification('Playlist cleared.');
 	}
 
 	exportPlaylist(): void {
 		if (this.videoPlaylist.length < 1) {
-			this.notificationService.showNotification("Nothing to export.");
+			this.notificationService.showNotification('Nothing to export.');
 			return;
 		}
 		let data = JSON.stringify(this.videoPlaylist);
-		let a = document.createElement("a");
-		let file = new Blob([data], { type: "text/json" });
+		let a = document.createElement('a');
+		let file = new Blob([data], { type: 'text/json' });
 		a.href = URL.createObjectURL(file);
-		a.download = "playlist.json";
+		a.download = 'playlist.json';
 		a.click();
-		this.notificationService.showNotification("Playlist exported.");
+		this.notificationService.showNotification('Playlist exported.');
 	}
 
 	importPlaylist(playlist: any): void {

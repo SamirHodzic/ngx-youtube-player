@@ -1,6 +1,6 @@
-import { Component, Input } from "@angular/core";
-import { YoutubePlayerService } from "../../shared/services/youtube-player.service";
-import { PlaylistStoreService } from "../../shared/services/playlist-store.service";
+import { Component, Input } from '@angular/core';
+import { YoutubePlayerService } from '../../shared/services/youtube-player.service';
+import { PlaylistStoreService } from '../../shared/services/playlist-store.service';
 
 @Component({
 	selector: 'videos-playlist',
@@ -22,7 +22,14 @@ export class VideosPlaylistComponent {
 	}
 
 	play(id: string): void {
-		this.youtubePlayer.playVideo(id);
+		let videoText = 'None';
+		this.videoPlaylist.forEach((video, index) => {
+			if (video.id === id) {
+				videoText = video.snippet.title;
+			}
+		});
+
+		this.youtubePlayer.playVideo(id, videoText);
 	}
 
 	currentPlaying(id: string): boolean {
@@ -38,7 +45,14 @@ export class VideosPlaylistComponent {
 		let current = this.youtubePlayer.getCurrentVideo();
 		let inPlaylist = undefined;
 		if (this.repeat) {
-			this.youtubePlayer.playVideo(current);
+			let videoText = 'None';
+			this.videoPlaylist.forEach((video, index) => {
+				if (video.id === current) {
+					videoText = video.snippet.title;
+				}
+			});
+
+			this.youtubePlayer.playVideo(current, videoText);
 			return;
 		}
 		this.videoPlaylist.forEach((video, index) => {
@@ -51,15 +65,15 @@ export class VideosPlaylistComponent {
 			let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
 			let playlistEl = document.getElementById('playlist');
 			if (this.shuffle) {
-				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
-				this.youtubePlayer.playVideo(shuffled);
+				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)];
+				this.youtubePlayer.playVideo(shuffled.id, shuffled.snippet.title);
 				playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
 			} else {
 				if (this.videoPlaylist.length - 1 === inPlaylist) {
-					this.youtubePlayer.playVideo(this.videoPlaylist[0].id);
+					this.youtubePlayer.playVideo(this.videoPlaylist[0].id, this.videoPlaylist[0].snippet.title);
 					playlistEl.scrollTop = 0;
 				} else {
-					this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id)
+					this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id, this.videoPlaylist[inPlaylist + 1].snippet.title)
 					playlistEl.scrollTop = topPos - 100;
 				}
 			}

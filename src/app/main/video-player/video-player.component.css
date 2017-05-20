@@ -149,3 +149,26 @@
   border: none;
   box-shadow: none;
 }
+
+.current-playing-text {
+  position: absolute;
+  left: 10.5em;
+  top: 1.4em;
+  font-size: 12px;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: clip;
+  white-space: nowrap;
+  text-align: left;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.now-playing-label {
+  opacity: 0.75;
+}

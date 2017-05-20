@@ -1,6 +1,6 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
-import { YoutubePlayerService } from "../../shared/services/youtube-player.service";
-import { PlaylistStoreService } from "../../shared/services/playlist-store.service";
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { YoutubePlayerService } from '../../shared/services/youtube-player.service';
+import { PlaylistStoreService } from '../../shared/services/playlist-store.service';
 
 @Component({
 	selector: 'videos-list',
@@ -19,7 +19,7 @@ export class VideosListComponent {
 	) { }
 
 	play(video: any): void {
-		this.youtubePlayer.playVideo(video.id);
+		this.youtubePlayer.playVideo(video.id, video.snippet.title);
 		this.addToPlaylist(video);
 	}
 

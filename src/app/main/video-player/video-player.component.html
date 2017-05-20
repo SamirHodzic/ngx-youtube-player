@@ -1,5 +1,9 @@
 <div class="main-player-block">
   <div class="player-controls-block">
+    <div class="current-playing-text" *ngIf="superMinPlayer">
+      <span class="now-playing-label">Now playing: </span>
+      <span>{{ currentVideoText | nowPlayingName }}</span>
+    </div>
     <span class="mute-block">
 			<button id="fullscreen_tip" class="mdl-button mdl-js-button mdl-button--icon" [ngClass]="{'active': fullscreenActive}" (click)="toggleFullscreen()">
 				<i class="material-icons">fullscreen</i>

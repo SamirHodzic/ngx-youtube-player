@@ -1,5 +1,5 @@
-import { Component, Input, AfterContentInit, Output, EventEmitter } from "@angular/core";
-import { YoutubePlayerService } from "../../shared/services/youtube-player.service";
+import { Component, Input, AfterContentInit, Output, EventEmitter } from '@angular/core';
+import { YoutubePlayerService } from '../../shared/services/youtube-player.service';
 import { NotificationService } from '../../shared/services/notification.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 	public shuffle: boolean = false;
 	public repeat: boolean = false;
 	public fullscreenActive: boolean = false;
+	public currentVideoText: string = 'None';
 
 	@Output() repeatActive = new EventEmitter();
 	@Output() shuffleActive = new EventEmitter();
@@ -30,6 +31,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 		private youtubePlayer: YoutubePlayerService,
 		private notificationService: NotificationService) {
 		this.youtubePlayer.playPauseEvent.subscribe(event => this.playingEvent = event);
+		this.youtubePlayer.currentVideoText.subscribe(event => this.currentVideoText = event || 'None' );
 	}
 
 	ngAfterContentInit() {
@@ -109,7 +111,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 	handleInputChange(e: any): void {
 		let file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
 		if(file.name.split('.').pop() !== 'json') {
-			this.notificationService.showNotification("File not supported.");
+			this.notificationService.showNotification('File not supported.');
 			return;
 		}
 		let reader = new FileReader();
@@ -123,16 +125,16 @@ export class VideoPlayerComponent implements AfterContentInit {
 				list = null;
 			}
 			if(!list) {
-				me.notificationService.showNotification("Playlist not valid.");
+				me.notificationService.showNotification('Playlist not valid.');
 				return;
 			}
 			if(list.length < 1) { 
-				me.notificationService.showNotification("Nothing to import.");
+				me.notificationService.showNotification('Nothing to import.');
 				return;
 			}
 			me.importPlaylist.emit(list);
-			me.notificationService.showNotification("Playlist imported.");
-			document.getElementById('import_button')['value'] = "";
+			me.notificationService.showNotification('Playlist imported.');
+			document.getElementById('import_button')['value'] = '';
 		}
 	}
 }

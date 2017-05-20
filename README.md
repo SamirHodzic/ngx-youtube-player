@@ -6,13 +6,13 @@
 
 > YouTube player app built with Angular 4 (latest 4.0.0).
 
-[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 10/04/2017)
+[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 20/05/2017)
 
 ## Quickstart
 
 **Note**: Require Node 4+ together with Npm 3+, also be sure to install 
 
-**1- Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.0.0) :**
+**1- Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.0.3) :**
 
 ```bash
 $ npm install -g @angular/cli@latest
@@ -53,8 +53,10 @@ Visit http://localhost:4200 and enjoy!
 - Simple Import/Export playlists as JSON
 
 ## TODO (Feel free to make pull request for any additional feature)
+- ~~'Now playing' when video is minimized~~
 - Save multiple playlists and switch between them
 - Update UI to be fully responsive for mobile/tablet
+- Browser notification interface when new song is going to start
 - Write tests
 - ...
 
