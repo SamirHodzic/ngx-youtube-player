@@ -116,7 +116,7 @@ export class MainComponent {
 			if (this.shuffle) {
 				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)];
 				this.youtubePlayer.playVideo(shuffled.id, shuffled.snippet.title);
-				playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
+				playlistEl.scrollTop = document.getElementById(shuffled.id).offsetTop - 100;
 			} else {
 				if (this.videoPlaylist.length - 1 === inPlaylist) {
 					this.youtubePlayer.playVideo(this.videoPlaylist[0].id, this.videoPlaylist[0].snippet.title);
@@ -146,7 +146,7 @@ export class MainComponent {
 			if (this.shuffle) {
 				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)];
 				this.youtubePlayer.playVideo(shuffled.id, shuffled.snippet.title);
-				playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
+				playlistEl.scrollTop = document.getElementById(shuffled.id).offsetTop - 100;
 			} else {
 				if (inPlaylist === 0) {
 					this.youtubePlayer.playVideo(this.videoPlaylist[this.videoPlaylist.length - 1].id, this.videoPlaylist[this.videoPlaylist.length - 1].snippet.title);
