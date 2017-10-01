@@ -78,4 +78,10 @@ export class YoutubePlayerService {
 	resizePlayer(width: number, height: number) {
 		this.yt_player.setSize(width, height);
 	}
+
+	getShuffled(index: number, max: number): number {
+		if(max < 2) return;
+		let i = Math.floor(Math.random() * max);
+		return i !== index ? i: this.getShuffled(index, max);
+	}
 }

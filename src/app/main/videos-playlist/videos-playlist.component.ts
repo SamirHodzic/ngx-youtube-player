@@ -43,18 +43,13 @@ export class VideosPlaylistComponent {
 
 	playNextVideo(): void {
 		let current = this.youtubePlayer.getCurrentVideo();
-		let inPlaylist = undefined;
-		if (this.repeat) {
-			let videoText = 'None';
-			this.videoPlaylist.forEach((video, index) => {
-				if (video.id === current) {
-					videoText = video.snippet.title;
-				}
-			});
+		let inPlaylist;
 
-			this.youtubePlayer.playVideo(current, videoText);
+		if (this.repeat) {
+			this.play(current);
 			return;
 		}
+
 		this.videoPlaylist.forEach((video, index) => {
 			if (video.id === current) {
 				inPlaylist = index;
@@ -65,7 +60,7 @@ export class VideosPlaylistComponent {
 			let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
 			let playlistEl = document.getElementById('playlist');
 			if (this.shuffle) {
-				let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)];
+				let shuffled = this.videoPlaylist[this.youtubePlayer.getShuffled(inPlaylist, this.videoPlaylist.length)];
 				this.youtubePlayer.playVideo(shuffled.id, shuffled.snippet.title);
 				playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
 			} else {
@@ -78,10 +73,5 @@ export class VideosPlaylistComponent {
 				}
 			}
 		}
-	}
-
-	getShuffled(index: number): number {
-		let i = Math.floor(Math.random() * this.videoPlaylist.length);
-		return i !== index ? i: this.getShuffled(index);
 	}
 }

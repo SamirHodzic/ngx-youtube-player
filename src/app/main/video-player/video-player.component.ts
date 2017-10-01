@@ -110,12 +110,15 @@ export class VideoPlayerComponent implements AfterContentInit {
 
 	handleInputChange(e: any): void {
 		let file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+
 		if(file.name.split('.').pop() !== 'json') {
 			this.notificationService.showNotification('File not supported.');
 			return;
 		}
+
 		let reader = new FileReader();
 		let me = this;
+		
 		reader.readAsText(file);
 		reader.onload = function(ev) {
 			let list;
@@ -124,14 +127,11 @@ export class VideoPlayerComponent implements AfterContentInit {
 			} catch (exc) {
 				list = null;
 			}
-			if(!list) {
+			if(!list || list.length < 1) {
 				me.notificationService.showNotification('Playlist not valid.');
 				return;
 			}
-			if(list.length < 1) { 
-				me.notificationService.showNotification('Nothing to import.');
-				return;
-			}
+
 			me.importPlaylist.emit(list);
 			me.notificationService.showNotification('Playlist imported.');
 			document.getElementById('import_button')['value'] = '';
