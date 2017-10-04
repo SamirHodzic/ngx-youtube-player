@@ -49,3 +49,9 @@
 	left: 78%;
 	background-color: rgba(196, 48, 43, 0.85);
 }
+
+@media (max-width: 1150px) {
+	.mdl-layout__content {
+		width: 100%;
+	}
+}

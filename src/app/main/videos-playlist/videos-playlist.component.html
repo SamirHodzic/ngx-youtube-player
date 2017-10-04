@@ -1,14 +1,23 @@
 <div id="playlist" class="playlist" [ngClass]="{'opened': playlistToggle}">
-  <div id="{{video.id}}" class="playist-item" *ngFor="let video of videoPlaylist; let i = index;" (click)="play(video.id)" [ngClass]="{'playing': currentPlaying(video.id)}">
-    <div class="playlist-thumbnail" [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}">
+
+  <div *ngFor="let video of videoPlaylist; let i = index;"
+			 id="{{video.id}}"
+			 class="playist-item"
+			 (click)="play(video.id)"
+			 [ngClass]="{'playing': currentPlaying(video.id)}">
+
+    <div class="playlist-thumbnail"
+				 [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}">
       <span class="no-in-playlist">{{ i + 1 }}</span>
       <span class="video-duration">{{ video.contentDetails.duration | videoDuration }}</span>
       <i class="material-icons delete-from-playlist" (click)="removeFromPlaylist(video)">cancel</i>
     </div>
+
     <div class="opened-item-info" [ngClass]="{'closed': !playlistToggle}" *ngIf="playlistNames">
       {{ video.snippet.title | playlistItemName }}
     </div>
   </div>
+
   <div class="playist-item-empty" *ngIf="!videoPlaylist.length">
     <div class="playlist-thumbnail" [ngStyle]="{'background': '#000'}">
       <i class="material-icons">block</i>
@@ -17,4 +26,5 @@
       Playlist is empty
     </div>
   </div>
+
 </div>
