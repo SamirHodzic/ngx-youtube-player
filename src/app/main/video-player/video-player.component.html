@@ -48,7 +48,7 @@
   <div class="player-containter" [ngClass]="{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}">
     <div class="player-view-controls">
       <i class="material-icons" *ngIf="!minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_down</i>
-      <i class="material-icons" *ngIf="minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_up</i>
+      <i class="material-icons arrow_drop_up" *ngIf="minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_up</i>
       <i class="material-icons minimize" *ngIf="!superMinPlayer && !fullscreenActive" (click)="minimizePlayer()">remove</i>
     </div>
     <div class="main-yt-player-block">

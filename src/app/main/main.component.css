@@ -54,4 +54,7 @@
 	.mdl-layout__content {
 		width: 100%;
 	}
+	.yt-player, .ytp-cued-thumbnail-overlay {
+		width: 100px;
+	}
 }
