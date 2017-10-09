@@ -1,60 +1,61 @@
 .loader-video {
-	top: calc(50% - 35px);
-	left: calc(50% - 16px);
+  top: calc(50% - 35px);
+  left: calc(50% - 16px);
 }
 
 .mdl-navigation {
-	width: 100%;
+  width: 100%;
 }
 
 .mdl-layout-title {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 .mdl-layout-title > img {
-	height: 35px;
+  height: 35px;
 }
 
 .mdl-layout__header {
-	height: 64px;
-	background-color: rgb(79, 111, 144);
+  height: 64px;
+  background-color: rgb(79, 111, 144);
 }
 
 .mdl-layout__content {
-	width: 95%;
+  width: 95%;
 }
 
 .mdl-layout__header-row {
-	padding: 0 40px 0 16px;
+  padding: 0 40px 0 16px;
 }
 
 .mdl-layout__drawer-button {
-	right: 0;
-	left: inherit;
+  right: 0;
+  left: inherit;
 }
 
 .blur-main-playlist-opened {
-	opacity: 0.4;
-	transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	-webkit-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .mdl-js-snackbar {
-	bottom: 0;
-	z-index: 999;
-	right: 0;
-	left: 78%;
-	background-color: rgba(196, 48, 43, 0.85);
+  bottom: 0;
+  z-index: 999;
+  right: 0;
+  left: 78%;
+  background-color: rgba(196, 48, 43, 0.85);
 }
 
 @media (max-width: 1150px) {
-	.mdl-layout__content {
-		width: 100%;
-	}
-	.yt-player, .ytp-cued-thumbnail-overlay {
-		width: 100px;
-	}
+  .mdl-layout__content {
+    width: 100%;
+  }
+
+  .yt-player, .ytp-cued-thumbnail-overlay {
+    width: 100px;
+  }
 }

@@ -1,4 +1,4 @@
-.mdl-textfield--floating-label.is-focused>.mdl-textfield__label {
+.mdl-textfield--floating-label.is-focused > .mdl-textfield__label {
   color: #fff;
 }
 
@@ -14,9 +14,8 @@
   background-color: #fff;
 }
 
-
 @media (max-width: 750px) {
-	.mdl-textfield {
-		width: 140px;
-	}
+  .mdl-textfield {
+    width: 140px;
+  }
 }
