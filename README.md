@@ -6,7 +6,7 @@
 
 > YouTube player app built with Angular 4 (latest 4.4.4).
 
-[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 01/10/2017)
+[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 11/10/2017)
 
 ## Quickstart
 
@@ -54,8 +54,8 @@ Visit http://localhost:4200 and enjoy!
 
 ## TODO (Feel free to make pull request for any additional feature)
 - ~~'Now playing' when video is minimized~~
+- ~~Update UI to be fully responsive for mobile/tablet~~
 - Save multiple playlists and switch between them
-- Update UI to be fully responsive for mobile/tablet
 - Browser notification interface when new song is going to start
 - Write tests
 - ...
