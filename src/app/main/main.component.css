@@ -3,8 +3,21 @@
   left: calc(50% - 16px);
 }
 
+.mdl-navigation {
+  width: 100%;
+}
+
+.mdl-layout-title {
+  margin-right: 10px;
+}
+
+.mdl-layout-title > img {
+  height: 35px;
+}
+
 .mdl-layout__header {
   height: 64px;
+  background-color: rgb(79, 111, 144);
 }
 
 .mdl-layout__content {
@@ -35,4 +48,14 @@
   right: 0;
   left: 78%;
   background-color: rgba(196, 48, 43, 0.85);
+}
+
+@media (max-width: 1150px) {
+  .mdl-layout__content {
+    width: 100%;
+  }
+
+  .yt-player, .ytp-cued-thumbnail-overlay {
+    width: 100px;
+  }
 }

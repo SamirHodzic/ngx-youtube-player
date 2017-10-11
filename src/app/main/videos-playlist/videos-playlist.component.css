@@ -17,8 +17,8 @@
 }
 
 .playlist.opened {
-  width: 24%;
-  max-width: 24%;
+  width: 25%;
+  max-width: 25%;
   z-index: 993;
   height: calc(100% - 114px);
   box-shadow: none;
@@ -93,4 +93,22 @@
   color: #f44542;
   background-color: rgba(0, 0, 0, 0.65);
   font-size: 16px;
+}
+
+@media (max-width: 1150px) {
+  .playlist {
+    width: 0;
+  }
+
+  .playlist.opened {
+    width: 40%;
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 620px) {
+  .playlist.opened {
+    width: 70%;
+    max-width: 70%;
+  }
 }

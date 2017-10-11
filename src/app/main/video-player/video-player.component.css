@@ -151,14 +151,15 @@
 }
 
 .current-playing-text {
+  max-width: 320px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   position: absolute;
   left: 10.5em;
   top: 1.4em;
   font-size: 12px;
-  overflow: hidden;
   text-align: left;
-  text-overflow: clip;
-  white-space: nowrap;
   text-align: left;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -171,4 +172,30 @@
 
 .now-playing-label {
   opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (max-width: 850px) {
+  .player-containter {
+    bottom: 60px;
+  }
+  .current-playing-text {
+    display: none !important;
+  }
+  .player-controls-block {
+    margin-left: 100px;
+    text-align: left;
+    left: 0;
+  }
+}
+
+@media (max-width: 1150px) {
+  .player-fullscreen {
+    bottom: 50px;
+    width: 100%;
+  }
+  .current-playing-text {
+    max-width: 160px;
+  }
 }
