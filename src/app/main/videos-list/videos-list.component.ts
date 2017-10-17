@@ -3,27 +3,27 @@ import { YoutubePlayerService } from '../../shared/services/youtube-player.servi
 import { PlaylistStoreService } from '../../shared/services/playlist-store.service';
 
 @Component({
-	selector: 'videos-list',
-	templateUrl: 'videos-list.component.html',
-	styleUrls: ['videos-list.component.css']
+  selector: 'videos-list',
+  templateUrl: 'videos-list.component.html',
+  styleUrls: ['videos-list.component.css']
 })
 
 export class VideosListComponent {
-	@Input() videoList;
-	@Input() loadingInProgress;
-	@Output() videoPlaylist = new EventEmitter();
+  @Input() videoList;
+  @Input() loadingInProgress;
+  @Output() videoPlaylist = new EventEmitter();
 
-	constructor(
-		private youtubePlayer: YoutubePlayerService,
-		private playlistService: PlaylistStoreService
-	) { }
+  constructor(
+    private youtubePlayer: YoutubePlayerService,
+    private playlistService: PlaylistStoreService
+  ) { }
 
-	play(video: any): void {
-		this.youtubePlayer.playVideo(video.id, video.snippet.title);
-		this.addToPlaylist(video);
-	}
+  play(video: any): void {
+    this.youtubePlayer.playVideo(video.id, video.snippet.title);
+    this.addToPlaylist(video);
+  }
 
-	addToPlaylist(video: any): void {
-		this.videoPlaylist.emit(video);
-	}
+  addToPlaylist(video: any): void {
+    this.videoPlaylist.emit(video);
+  }
 }

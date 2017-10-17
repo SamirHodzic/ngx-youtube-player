@@ -12,8 +12,8 @@
     "eofline": true,
     "forin": true,
     "indent": [
-      false,
-      "tabs"
+      true,
+      "spaces"
     ],
     "label-position": true,
     "max-line-length": [

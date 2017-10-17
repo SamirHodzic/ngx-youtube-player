@@ -4,16 +4,16 @@ import { Injectable } from '@angular/core';
 export class NotificationService {
   private timeoutDuration = 3500;
 
-	constructor() { }
+  constructor() { }
 
-	public showNotification(message: string): void {
-		let notification =  document.querySelector('.mdl-js-snackbar');
-		let data = {
-			message: message,
-			timeout: this.timeoutDuration
-		};
+  public showNotification(message: string): void {
+    let notification = document.querySelector('.mdl-js-snackbar');
+    let data = {
+      message: message,
+      timeout: this.timeoutDuration
+    };
 
-		notification['MaterialSnackbar'].showSnackbar(data);
-	}
+    notification['MaterialSnackbar'].showSnackbar(data);
+  }
 
 }

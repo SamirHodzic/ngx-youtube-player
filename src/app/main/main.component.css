@@ -11,7 +11,7 @@
   margin-right: 10px;
 }
 
-.mdl-layout-title > img {
+.mdl-layout-title>img {
   height: 35px;
 }
 
@@ -54,8 +54,8 @@
   .mdl-layout__content {
     width: 100%;
   }
-
-  .yt-player, .ytp-cued-thumbnail-overlay {
+  .yt-player,
+  .ytp-cued-thumbnail-overlay {
     width: 100px;
   }
 }

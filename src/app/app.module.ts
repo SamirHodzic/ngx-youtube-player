@@ -23,37 +23,37 @@ import { NowPlayingNamePipe } from './shared/pipes/now-playing-name.pipe';
 import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll.directive';
 
 @NgModule({
-	imports: [
-		BrowserModule,
-		HttpModule,
-		ReactiveFormsModule
-	],
-	declarations: [
-		AppComponent,
-		MainComponent,
+  imports: [
+    BrowserModule,
+    HttpModule,
+    ReactiveFormsModule
+  ],
+  declarations: [
+    AppComponent,
+    MainComponent,
 
-		VideosListComponent,
-		VideosSearchComponent,
-		VideoPlayerComponent,
-		VideosPlaylistComponent,
+    VideosListComponent,
+    VideosSearchComponent,
+    VideoPlayerComponent,
+    VideosPlaylistComponent,
 
-		VideoDurationPipe,
-		VideoLikesPipe,
-		VideoViewsPipe,
-		PlaylistItemNamePipe,
-		NowPlayingNamePipe,
+    VideoDurationPipe,
+    VideoLikesPipe,
+    VideoViewsPipe,
+    PlaylistItemNamePipe,
+    NowPlayingNamePipe,
 
-		LazyScrollDirective
-	],
-	bootstrap: [
-		AppComponent
-	],
-	providers: [
-		YoutubeApiService,
-		YoutubePlayerService,
-		PlaylistStoreService,
-		NotificationService
-	]
+    LazyScrollDirective
+  ],
+  bootstrap: [
+    AppComponent
+  ],
+  providers: [
+    YoutubeApiService,
+    YoutubePlayerService,
+    PlaylistStoreService,
+    NotificationService
+  ]
 })
 export class AppModule {
 }
