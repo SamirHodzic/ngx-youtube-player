@@ -6,7 +6,7 @@ import { Directive, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 		'(scroll)': 'onScroll($event)'
 	}
 })
-export class LazyScroll {
+export class LazyScrollDirective {
 	public _element: any;
 	public _count: number;
 

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class NotificationService {
-	constructor() { }
+  private timeoutDuration = 3500;
 
-	private timeoutDuration: number = 3500;
+	constructor() { }
 
 	public showNotification(message: string): void {
 		let notification =  document.querySelector('.mdl-js-snackbar');

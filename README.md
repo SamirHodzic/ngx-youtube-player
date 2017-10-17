@@ -6,13 +6,13 @@
 
 > YouTube player app built with Angular 4 (latest 4.4.4).
 
-[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 11/10/2017)
+[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 17/10/2017)
 
 ## Quickstart
 
 **Note**: Require Node 4+ together with Npm 3+, also be sure to install
 
-**1- Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.4.4) :**
+**1- Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.4.7) :**
 
 ```bash
 $ npm install -g @angular/cli@latest

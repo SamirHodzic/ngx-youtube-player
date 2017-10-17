@@ -1,6 +1,6 @@
 {
   "name": "ngx-youtube-player",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -26,7 +26,7 @@
     "@angular/compiler-cli": "^4.4.4",
     "@types/jasmine": "^2.6.0",
     "@types/node": "^8.0.31",
-    "@angular/cli": "^1.4.4",
+    "@angular/cli": "^1.4.7",
     "codelyzer": "^3.2.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
