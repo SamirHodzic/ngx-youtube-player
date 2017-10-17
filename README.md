@@ -1,6 +1,7 @@
 ![ngx-youtube-player-logo](https://raw.githubusercontent.com/SamirHodzic/ngx-youtube-player/master/src/assets/logo_git.png)
 
 # ngx-YouTube-Player
+[![build-url][build-url-svg]][build-url]
 [![Dependencies][dependencies]][dependencies-url]
 [![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 
@@ -65,3 +66,5 @@ Visit http://localhost:4200 and enjoy!
 [dependencies-url]: https://david-dm.org/samirhodzic/ngx-youtube-player
 [dev-dependencies]: https://david-dm.org/samirhodzic/ngx-youtube-player/dev-status.svg
 [dev-dependencies-url]: https://david-dm.org/samirhodzic/ngx-youtube-player?type=dev
+[build-url]: https://travis-ci.org/SamirHodzic/ngx-youtube-player
+[build-url-svg]: https://travis-ci.org/SamirHodzic/ngx-youtube-player.svg?branch=master
