@@ -1,6 +1,5 @@
 {
   "project": {
-    "version": "1.0.0-rc.1",
     "name": "ngx-youtube-player"
   },
   "apps": [{
@@ -12,10 +11,9 @@
     ],
     "index": "index.html",
     "main": "main.ts",
-    "tsconfig": "tsconfig.json",
     "polyfills": "polyfills.ts",
+    "tsconfig": "tsconfig.json",
     "prefix": "app",
-    "mobile": false,
     "styles": [
       "styles.css",
       "../node_modules/material-design-lite/dist/material.min.css"
@@ -24,14 +22,14 @@
       "../node_modules/material-design-lite/material.min.js"
     ]
   }],
-  "addons": [],
-  "packages": [],
   "defaults": {
     "styleExt": "css",
-    "prefixInterfaces": false,
-    "inline": {
-      "style": false,
-      "template": false
+    "component": {
+      "inlineStyle": false,
+      "inlineTemplate": false
     }
+  },
+  "warnings": {
+    "typescriptMismatch": false
   }
 }
