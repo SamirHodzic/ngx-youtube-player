@@ -184,9 +184,10 @@
     display: none !important;
   }
   .player-controls-block {
-    margin-left: 100px;
-    text-align: left;
     left: 0;
+  }
+  .repeat-shuffle-block {
+    margin-left: 10px;
   }
 }
 

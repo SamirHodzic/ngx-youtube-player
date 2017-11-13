@@ -6,34 +6,23 @@
         <img src="assets/logo.png">
       </div>
       <nav class="mdl-navigation">
-        <videos-search
-          (videosUpdated)="handleSearchVideo($event)"
-          [loadingInProgress]="loadingInProgress">
+        <videos-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress">
         </videos-search>
       </nav>
-      <div aria-expanded="false" role="button" tabindex="0"
-           class="mdl-layout__drawer-button toggle-playlist-icon" (click)="togglePlaylist()">
+      <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button toggle-playlist-icon" (click)="togglePlaylist()">
         <i class="material-icons"></i>
       </div>
     </div>
   </header>
 
-  <videos-playlist
-    [repeat]="repeat"
-    [shuffle]="shuffle"
-    [playlistToggle]="playlistToggle"
-    [playlistNames]="playlistNames"
-    [videoPlaylist]="videoPlaylist">
+  <videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist">
   </videos-playlist>
 
   <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
     <div class="page-content" [ngClass]="{'blur-main-playlist-opened': playlistToggle}">
-      <videos-list *ngIf="videoList.length" class="mdl-grid"
-                   (videoPlaylist)="checkAddToPlaylist($event)"
-                   [videoList]="videoList"
-                   [loadingInProgress]="loadingInProgress">
+      <videos-list *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
       </videos-list>
-      <div class="loader loader-video" *ngIf="!videoList.length">
+      <div class="loader" *ngIf="!videoList.length">
         <div class="loading"></div>
       </div>
     </div>
@@ -41,16 +30,8 @@
 
 </div>
 
-<video-player
-  (closePlaylist)="closePlaylist()"
-  (importPlaylist)="importPlaylist($event)"
-  (exportPlaylist)="exportPlaylist()"
-  (clearPlaylist)="clearPlaylist()"
-  (playFirstInPlaylist)="playFirstInPlaylist()"
-  (repeatActive)="repeatActive($event)"
-  (shuffleActive)="shuffleActive($event)"
-  (nextVideoEvent)="nextVideo()"
-  (prevVideoEvent)="prevVideo()">
+<video-player (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()" (clearPlaylist)="clearPlaylist()" (playFirstInPlaylist)="playFirstInPlaylist()" (repeatActive)="repeatActive($event)" (shuffleActive)="shuffleActive($event)"
+  (nextVideoEvent)="nextVideo()" (prevVideoEvent)="prevVideo()">
 </video-player>
 
 <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">

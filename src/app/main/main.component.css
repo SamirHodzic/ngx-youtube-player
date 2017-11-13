@@ -1,8 +1,3 @@
-.loader-video {
-  top: calc(50% - 35px);
-  left: calc(50% - 16px);
-}
-
 .mdl-navigation {
   width: 100%;
 }
@@ -46,8 +41,13 @@
   bottom: 0;
   z-index: 999;
   right: 0;
-  left: 78%;
   background-color: rgba(196, 48, 43, 0.85);
+}
+
+@media (max-width: 850px) {
+  .mdl-layout-title>img {
+    height: 30px;
+  }
 }
 
 @media (max-width: 1150px) {

@@ -1,6 +1,7 @@
 import { Component, Input, AfterContentInit, Output, EventEmitter } from '@angular/core';
 import { YoutubePlayerService } from '../../shared/services/youtube-player.service';
 import { NotificationService } from '../../shared/services/notification.service';
+import { BrowserNotificationService } from '../../shared/services/browser-notification.service';
 
 @Component({
   selector: 'video-player',
@@ -16,6 +17,7 @@ export class VideoPlayerComponent implements AfterContentInit {
   public repeat = false;
   public fullscreenActive = false;
   public currentVideoText = 'None';
+  public notifications = false;
 
   @Output() repeatActive = new EventEmitter();
   @Output() shuffleActive = new EventEmitter();
@@ -29,7 +31,9 @@ export class VideoPlayerComponent implements AfterContentInit {
 
   constructor(
     private youtubePlayer: YoutubePlayerService,
-    private notificationService: NotificationService) {
+    private notificationService: NotificationService,
+    private browserNotification: BrowserNotificationService
+  ) {
     this.youtubePlayer.playPauseEvent.subscribe(event => this.playingEvent = event);
     this.youtubePlayer.currentVideoText.subscribe(event => this.currentVideoText = event || 'None');
   }
@@ -136,5 +140,19 @@ export class VideoPlayerComponent implements AfterContentInit {
       me.notificationService.showNotification('Playlist imported.');
       document.getElementById('import_button')['value'] = '';
     }
+  }
+
+  toggleNotifications(): void {
+    this.notifications ?
+      (
+        this.notifications = false,
+        this.browserNotification.disable()
+      ) :
+      this.browserNotification.checkNotification().then(async res => {
+        this.notifications = res === 'granted' ? true : (
+          this.notificationService.showNotification('Browser notifications blocked.'),
+          false
+        );
+      });
   }
 }

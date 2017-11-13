@@ -7,7 +7,7 @@
 
 > YouTube player app built with Angular 5 (latest 5.0.0).
 
-[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 10/11/2017)
+[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 13/11/2017)
 
 ## Quickstart
 
@@ -49,6 +49,7 @@ Visit http://localhost:4200 and enjoy!
 - Play music while searching
 - Extended controls
 - Shuffle/Repeat options for your playlists
+- Browser notifications when new song is going to start
 - Different type for video displaying
 - Create local playlist without authorization
 - Simple Import/Export playlists as JSON
@@ -56,8 +57,8 @@ Visit http://localhost:4200 and enjoy!
 ## TODO (Feel free to make pull request for any additional feature)
 - ~~'Now playing' when video is minimized~~
 - ~~Update UI to be fully responsive for mobile/tablet~~
+- ~~Browser notification interface when new song is going to start~~
 - Save multiple playlists and switch between them
-- Browser notification interface when new song is going to start
 - Write tests
 - ...
 

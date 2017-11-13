@@ -1,6 +1,7 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NotificationService } from './notification.service';
+import { BrowserNotificationService } from './browser-notification.service';
 
 let _window: any = window;
 
@@ -13,8 +14,10 @@ export class YoutubePlayerService {
   @Output() playPauseEvent: EventEmitter<any> = new EventEmitter(true);
   @Output() currentVideoText: EventEmitter<any> = new EventEmitter(true);
 
-  constructor(public notificationService: NotificationService) {
-  }
+  constructor(
+    public notificationService: NotificationService,
+    public browserNotification: BrowserNotificationService
+  ) {}
 
   createPlayer(): void {
     let interval = setInterval(() => {
@@ -61,6 +64,7 @@ export class YoutubePlayerService {
     this.yt_player.loadVideoById(videoId);
     this.currentVideoId = videoId;
     this.currentVideoText.emit(videoText);
+    this.browserNotification.show(videoText);
   }
 
   pausePlayingVideo(): void {

@@ -14,6 +14,7 @@ import { YoutubeApiService } from './shared/services/youtube-api.service';
 import { YoutubePlayerService } from './shared/services/youtube-player.service';
 import { PlaylistStoreService } from './shared/services/playlist-store.service';
 import { NotificationService } from './shared/services/notification.service';
+import { BrowserNotificationService } from './shared/services/browser-notification.service';
 // Pipes
 import { VideoDurationPipe } from './shared/pipes/video-duration.pipe';
 import { VideoLikesPipe } from './shared/pipes/video-likes.pipe';
@@ -52,7 +53,8 @@ import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll
     YoutubeApiService,
     YoutubePlayerService,
     PlaylistStoreService,
-    NotificationService
+    NotificationService,
+    BrowserNotificationService
   ]
 })
 export class AppModule {
