@@ -17,7 +17,7 @@ export class YoutubePlayerService {
   constructor(
     public notificationService: NotificationService,
     public browserNotification: BrowserNotificationService
-  ) {}
+  ) { }
 
   createPlayer(): void {
     let interval = setInterval(() => {

@@ -5,11 +5,11 @@
         <div class="video-informations">
           <span style="float: left;">
 						<i class="material-icons">thumb_up</i>
-						{{ video.statistics?.likeCount | videoLikes }}
+						{{ video.statistics?.likeCount | videoLikesViews }}
 					</span>
           <span style="margin-left: 10px;">
 						<i class="material-icons">remove_red_eye</i>
-						{{ video.statistics?.viewCount | videoViews}}
+						{{ video.statistics?.viewCount | videoLikesViews }}
 					</span>
           <span style="margin-left: 10px; float: right;">
 						<i class="material-icons">access_time</i>
@@ -19,7 +19,7 @@
       </div>
       <div class="video-name-block">
         <div class="video-informations">
-          {{ video.snippet?.title | playlistItemName }}
+          {{ video.snippet?.title | videoName: [65, 62] }}
         </div>
       </div>
       <div class="video-play-button">

@@ -24,7 +24,8 @@ export class VideosSearchComponent {
     public fb: FormBuilder,
     private youtubeService: YoutubeApiService,
     private youtubePlayer: YoutubePlayerService,
-    private notificationService: NotificationService) {
+    private notificationService: NotificationService
+  ) {
     this.youtubeService.searchVideos('')
       .then(data => {
         this.videosUpdated.emit(data);
@@ -32,7 +33,8 @@ export class VideosSearchComponent {
   }
 
   doSearch(event): void {
-    if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
+    if (this.loadingInProgress ||
+      (this.searchForm.value.query.trim().length === 0) ||
       (this.last_search && this.last_search === this.searchForm.value.query)) {
       return;
     }

@@ -7,7 +7,7 @@
 
 > YouTube player app built with Angular 5 (latest 5.0.0).
 
-[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 13/11/2017)
+[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 18/12/2017)
 
 ## Quickstart
 

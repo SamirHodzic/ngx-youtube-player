@@ -17,10 +17,8 @@ import { NotificationService } from './shared/services/notification.service';
 import { BrowserNotificationService } from './shared/services/browser-notification.service';
 // Pipes
 import { VideoDurationPipe } from './shared/pipes/video-duration.pipe';
-import { VideoLikesPipe } from './shared/pipes/video-likes.pipe';
-import { VideoViewsPipe } from './shared/pipes/video-views.pipe';
-import { PlaylistItemNamePipe } from './shared/pipes/playlist-item-name.pipe';
-import { NowPlayingNamePipe } from './shared/pipes/now-playing-name.pipe';
+import { VideoLikesViewsPipe } from './shared/pipes/video-likes-views.pipe';
+import { VideoNamePipe } from './shared/pipes/video-name.pipe';
 import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll.directive';
 
 @NgModule({
@@ -39,10 +37,8 @@ import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll
     VideosPlaylistComponent,
 
     VideoDurationPipe,
-    VideoLikesPipe,
-    VideoViewsPipe,
-    PlaylistItemNamePipe,
-    NowPlayingNamePipe,
+    VideoLikesViewsPipe,
+    VideoNamePipe,
 
     LazyScrollDirective
   ],

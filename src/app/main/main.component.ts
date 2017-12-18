@@ -5,7 +5,7 @@ import { PlaylistStoreService } from '../shared/services/playlist-store.service'
 import { NotificationService } from '../shared/services/notification.service';
 
 @Component({
-  selector: 'main-list',
+  selector: 'main-block',
   templateUrl: 'main.component.html',
   styleUrls: ['main.component.css']
 })
@@ -168,9 +168,11 @@ export class MainComponent implements AfterViewInit {
       this.notificationService.showNotification('Nothing to export.');
       return;
     }
+
     let data = JSON.stringify(this.videoPlaylist);
     let a = document.createElement('a');
     let file = new Blob([data], { type: 'text/json' });
+
     a.href = URL.createObjectURL(file);
     a.download = 'playlist.json';
     a.click();

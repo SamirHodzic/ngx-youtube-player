@@ -17,12 +17,14 @@ export class VideosPlaylistComponent {
 
   constructor(
     private youtubePlayer: YoutubePlayerService,
-    private playlistService: PlaylistStoreService) {
+    private playlistService: PlaylistStoreService
+  ) {
     this.youtubePlayer.videoChangeEvent.subscribe(event => event ? this.playNextVideo() : false);
   }
 
   play(id: string): void {
     let videoText = 'None';
+
     this.videoPlaylist.forEach((video, index) => {
       if (video.id === id) {
         videoText = video.snippet.title;

@@ -10,13 +10,13 @@ import { BrowserNotificationService } from '../../shared/services/browser-notifi
 })
 
 export class VideoPlayerComponent implements AfterContentInit {
+  public currentVideoText = 'None';
+  public playingEvent = 'pause';
   public minPlayer = true;
   public superMinPlayer = false;
-  public playingEvent = 'pause';
   public shuffle = false;
   public repeat = false;
   public fullscreenActive = false;
-  public currentVideoText = 'None';
   public notifications = false;
 
   @Output() repeatActive = new EventEmitter();
@@ -52,6 +52,7 @@ export class VideoPlayerComponent implements AfterContentInit {
     this.minPlayer = false;
     this.superMinPlayer = false;
     this.fullscreenActive = !this.fullscreenActive;
+
     let width = this.fullscreenActive ? window.innerWidth - 70 : 440;
     let height = this.fullscreenActive ? window.innerHeight - 120 : 250;
     this.youtubePlayer.resizePlayer(width, height);
@@ -59,10 +60,12 @@ export class VideoPlayerComponent implements AfterContentInit {
 
   playPause(event: string): void {
     this.playingEvent = event;
+
     if (!this.youtubePlayer.getCurrentVideo()) {
       this.playFirstInPlaylist.emit();
       return;
     }
+
     event === 'pause' ? this.youtubePlayer.pausePlayingVideo() : this.youtubePlayer.playPausedVideo();
   }
 
