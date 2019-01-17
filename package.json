@@ -1,10 +1,13 @@
 {
   "name": "ngx-youtube-player",
   "version": "1.0.0",
+  "main": "main.js", 
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
+    "electron": "electron .", 
+    "electron": "ng build --base-href ./ && electron .", 
     "lint": "tslint \"src/**/*.ts\"",
     "gh-deploy": "ng build --prod && npx angular-cli-ghpages"
   },
@@ -36,6 +39,8 @@
     "@types/node": "^10.0.50",
     "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "^4.5.0",
+    "electron": "^4.0.1",
+    "electron-packager": "^13.0.1",
     "ts-node": "^4.0.0",
     "tslint": "^5.8.0",
     "typescript": "~3.1.1"
