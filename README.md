@@ -37,6 +37,32 @@ $ npm install
 ```bash
 $ ng serve
 ```
+**5- Install electron :**
+
+```bash
+$ npm install electron --save-dev
+```
+**6- Run your angular app as an native desktop app :**
+
+```bash
+$ npm run electron-build
+```
+**7- Packaging for Desktop Operating Systems :**
+
+```bash
+$ npm install electron-packager -g
+$ npm install electron-packager --save-dev
+```
+**8- build an executable for Windows :**
+
+```bash
+$ electron-packager . --platform=win32
+```
+**9- build an executable for MacOS :**
+
+```bash
+$ electron-packager . --platform=darwin
+```
 
 Visit http://localhost:4200 and enjoy!
 
@@ -53,6 +79,7 @@ Visit http://localhost:4200 and enjoy!
 - Different type for video displaying
 - Create local playlist without authorization
 - Simple Import/Export playlists as JSON
+- Add electron for Desktop App
 
 ## TODO
 - ~~'Now playing' when video is minimized~~
