@@ -5,7 +5,7 @@
 [![Dependencies][dependencies]][dependencies-url]
 [![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 
-> YouTube player app built with Angular 7 (latest 7.1.4).
+> A YouTube Player component for Angular 7+ (latest 8.2.14).
 
 [Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 06/01/2019)
 
