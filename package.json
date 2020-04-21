@@ -14,30 +14,30 @@
   },
   "private": false,
   "dependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/compiler": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
+    "@angular/common": "^9.1.2",
+    "@angular/compiler": "^9.1.2",
+    "@angular/core": "^9.1.2",
+    "@angular/forms": "^9.1.2",
     "@angular/http": "^7.0.0",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/router": "^8.2.14",
+    "@angular/platform-browser": "^9.1.2",
+    "@angular/platform-browser-dynamic": "^9.1.2",
+    "@angular/router": "^9.1.2",
     "core-js": "^2.6.1",
     "material-design-lite": "^1.3.0",
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.3.3",
-    "tslib": "^1.9.0",
-    "zone.js": "^0.9.1"
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.11.0",
-    "@angular/cli": "^8.3.26",
-    "@angular/compiler-cli": "^8.2.14",
-    "@types/node": "^10.0.50",
+    "@angular-devkit/build-angular": "~0.901.2",
+    "@angular/cli": "^9.1.2",
+    "@angular/compiler-cli": "^9.1.2",
+    "@types/node": "^12.11.1",
     "angular-cli-ghpages": "^0.5.3",
-    "codelyzer": "^4.5.0",
+    "codelyzer": "^5.1.2",
     "ts-node": "^4.0.0",
     "tslint": "^5.8.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.8.3"
   }
 }
