@@ -130,7 +130,7 @@ export class VideoPlayerComponent implements AfterContentInit {
     reader.onload = function (ev) {
       let list;
       try {
-        list = JSON.parse(ev.target['result']);
+        list = JSON.parse(ev.target['result'].toString());
       } catch (exc) {
         list = null;
       }
