@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "lib": ["es6", "dom"],
     "mapRoot": "./",
-    "module": "es6",
+    "module": "esnext",
     "moduleResolution": "node",
     "outDir": "../docs/out-tsc",
     "sourceMap": true,
@@ -14,5 +14,12 @@
     "typeRoots": [
       "../node_modules/@types"
     ]
-  }
+  },
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
 }

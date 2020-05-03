@@ -1,10 +1,11 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable, Output, EventEmitter, Directive } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NotificationService } from './notification.service';
 import { BrowserNotificationService } from './browser-notification.service';
 
 let _window: any = window;
 
+@Directive()
 @Injectable()
 export class YoutubePlayerService {
   public yt_player;
