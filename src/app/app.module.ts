@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 // Components
 import { AppComponent } from './app.component';
@@ -24,7 +24,7 @@ import { LazyScrollDirective } from './shared/directives/lazy-scroll/lazy-scroll
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   declarations: [

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import { NotificationService } from './notification.service';
 import { YOUTUBE_API_KEY } from '../constants';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable()
 export class YoutubeApiService {
@@ -14,7 +16,7 @@ export class YoutubeApiService {
   public lastQuery: string;
 
   constructor(
-    private http: Http,
+    private http: HttpClient,
     private notificationService: NotificationService
   ) { }
 
@@ -23,7 +25,7 @@ export class YoutubeApiService {
 
     return this.http.get(url)
       .map(response => {
-        let jsonRes = response.json();
+        let jsonRes = response; 
         let res = jsonRes['items'];
         this.lastQuery = query;
         this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
@@ -45,7 +47,7 @@ export class YoutubeApiService {
 
     return this.http.get(url)
       .map(response => {
-        let jsonRes = response.json();
+        let jsonRes = response;
         let res = jsonRes['items'];
         this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
         let ids = [];
@@ -65,23 +67,23 @@ export class YoutubeApiService {
 
     return this.http.get(url)
       .map(results => {
-        return results.json()['items'];
+        return results['items'];
       })
       .toPromise()
       .catch(this.handleError)
   }
 
-  private handleError(error: Response | any) {
+  private handleError(error: HttpErrorResponse | any) {
     let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    if (error instanceof ErrorEvent) {
+      
+      errMsg = 'An error occurred:' + error.error.message ;
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
 
     this.notificationService.showNotification(errMsg);
-    return Promise.reject(errMsg);
+    return throwError(
+      'Something bad happened; please try again later.'); 
   }
 }
