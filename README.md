@@ -1,13 +1,8 @@
 ![ngx-youtube-player-logo](https://raw.githubusercontent.com/SamirHodzic/ngx-youtube-player/master/src/assets/logo_git.png)
 
 # ngx-YouTube-Player
-[![build-url][build-url-svg]][build-url]
-[![Dependencies][dependencies]][dependencies-url]
-[![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 
 > YouTube player app built with Angular 7 (latest 7.1.4).
-
-[Demo](https://samirhodzic.github.io/ngx-youtube-player) (Updated: 06/01/2019)
 
 ## Quickstart
 
@@ -61,11 +56,3 @@ Visit http://localhost:4200 and enjoy!
 - Save multiple playlists and switch between them
 - Write tests
 - ...
-
-
-[dependencies]: https://david-dm.org/samirhodzic/ngx-youtube-player.svg
-[dependencies-url]: https://david-dm.org/samirhodzic/ngx-youtube-player
-[dev-dependencies]: https://david-dm.org/samirhodzic/ngx-youtube-player/dev-status.svg
-[dev-dependencies-url]: https://david-dm.org/samirhodzic/ngx-youtube-player?type=dev
-[build-url]: https://travis-ci.org/SamirHodzic/ngx-youtube-player
-[build-url-svg]: https://travis-ci.org/SamirHodzic/ngx-youtube-player.svg?branch=master
